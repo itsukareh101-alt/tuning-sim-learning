@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+  
+  --color-brand-bg: #0b0c0e;
+  --color-panel-bg: #15171a;
+  --color-panel-header: #1c1f24;
+  --color-panel-border: #2a2d32;
+  --color-input-border: #3f444c;
+  --color-accent: #ff6b00;
+  --color-active-green: #22c55e;
+  --color-dead-red: #ff5555;
+  --color-text-muted: #888888;
+  --color-text-body: #e2e2e2;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-text-body font-sans antialiased;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel-bg border border-panel-border rounded-lg flex flex-col overflow-hidden;
+  }
+  
+  .panel-header {
+    @apply bg-panel-header px-4 py-2.5 border-b border-panel-border text-[11px] font-extrabold uppercase tracking-widest text-text-muted;
+  }
+
+  .tune-table {
+    @apply w-full border-collapse font-mono text-[10px];
+  }
+  
+  .tune-table th {
+    @apply bg-panel-header border border-panel-border p-1 text-text-muted font-black uppercase tracking-tighter;
+  }
+  
+  .tune-table td {
+    @apply border border-panel-border p-0 text-center transition-colors;
+  }
+  
+  .tune-table td:hover {
+    @apply bg-white/5;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded border text-[10px] font-bold uppercase tracking-wider;
+  }
+  
+  .status-active {
+    @apply bg-green-900/30 text-active-green border-active-green/50;
+  }
+  
+  .status-dead {
+    @apply bg-red-900/30 text-dead-red border-dead-red/50;
+  }
+
+  .btn-primary {
+    @apply bg-accent hover:bg-blue-500 text-white px-5 py-2 rounded text-[13px] font-semibold uppercase transition-all active:scale-95;
+  }
+
+  .pedal {
+    @apply w-[60px] h-[100px] bg-panel-border border-2 border-input-border rounded-lg transition-all duration-100;
+  }
+  
+  .pedal-active {
+    @apply bg-accent border-blue-400 scale-[0.95] shadow-[0_0_15px_rgba(0,123,255,0.5)];
+  }
+
+  .gauge-ring {
+    @apply relative w-[110px] h-[110px] rounded-full border-4 border-panel-border flex flex-col items-center justify-center;
+  }
+}

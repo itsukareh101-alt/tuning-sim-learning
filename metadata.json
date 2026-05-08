@@ -1,0 +1,6 @@
+{
+  "name": "SSF Tuning Simulator",
+  "description": "An educational engine tuning simulation game where you calibrate fuel and ignition maps while monitoring real-time telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
